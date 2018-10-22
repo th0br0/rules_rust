@@ -19,9 +19,6 @@ platforms:
     - "--" # Hack for https://github.com/bazelbuild/continuous-integration/pull/245
     - "..."
     - "@examples//..."
-    # Skip tests for dylib support on osx, since we don't support it yet.
-    - "-@examples//ffi/rust_calling_c:matrix_dylib_test"
-    - "-@examples//ffi/rust_calling_c:matrix_dynamically_linked"
     build_targets: *targets
     test_targets: *targets
   rbe_ubuntu1604:
