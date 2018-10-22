@@ -294,11 +294,6 @@ def _compute_rpaths(toolchain, output_dir, depinfo):
     """
     if not depinfo.transitive_dylibs:
         return depset([])
-    if toolchain.os != "linux":
-        fail("Runtime linking is not supported on {}, but found {}".format(
-            toolchain.os,
-            depinfo.transitive_dylibs,
-        ))
 
     # Multiple dylibs can be present in the same directory, so deduplicate them.
     return depset([
