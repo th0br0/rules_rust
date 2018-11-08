@@ -239,6 +239,7 @@ def rustc_compile_action(
         _get_rustc_env(ctx) +
         [
             "OUT_DIR=$(pwd)/out_dir",
+            "OPT_LEVEL=%s" % compilation_mode.opt_level,
             toolchain.rustc.path,
             crate_info.root.path,
             "--crate-name",
